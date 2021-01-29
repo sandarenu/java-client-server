@@ -5,7 +5,8 @@ import java.io.*;
 import java.net.*;
 
 public class SimpleClient {
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         LogPrinter.logMsg("Client Started", "");
 
@@ -22,6 +23,7 @@ public class SimpleClient {
             String fromUser;
 
             for (int i = 0; i < 5; i++) {
+                Thread.sleep(1000);
                 out.println("Test " + i);
                 fromServer = in.readLine();
                 LogPrinter.logMsg("Server reply: ", fromServer);
